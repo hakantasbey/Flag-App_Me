@@ -14,7 +14,7 @@ const getApi = async()=>{
             showData(data)
             selectBarOptions(data)
         }else{
-            throw new Error(`Hata olustu: ${res.ststus}`)
+            throw new Error(`Hata olustu: ${res.status}`)
         }
     }catch(error){
         console.log(error);
@@ -84,6 +84,6 @@ const showData = (country) => {
 
 selectBar.addEventListener("click", (e)=>{
     const value = selectBar.value
-    const searchedData = allDatas.filter((c)=>value==c.name.common)
+    const searchedData = allDatas.filter((c)=>value===c.name.common)
     showData(searchedData)
 })
